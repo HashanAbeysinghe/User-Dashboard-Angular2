@@ -1,3 +1,22 @@
+<div class="container">
 <h1>
   {{title}}
 </h1>
+<div *ngIf="navigationBar"> 
+
+  <ul class="nav nav-pills">
+    <li role="presentation" [routerLinkActive]="['active']"><a class="nav-link" routerLink="home">Home</a></li>
+    <li role="presentation" [routerLinkActive]="['active']"><a class="nav-link" routerLink="people">People</a></li>
+    <li role="presentation" [routerLinkActive]="['active']"><a class="nav-link" routerLink="about">About</a></li>
+    <li role="presentation" [routerLinkActive]="['active']"><a class="nav-link" routerLink="login">Logout</a></li>
+    <li role="presentation" [routerLinkActive]="['active']"><a class="nav-link" [routerLink]="[{ outlets: { 'messenger': ['message'] } }]">Messenger</a></li>
+    <li role="presentation" [routerLinkActive]="['active']"><a class="nav-link" [routerLink]="[{ outlets: { 'messenger': ['about2'] } }]">About Messenger</a></li>
+  </ul>
+
+</div>
+
+<router-outlet></router-outlet>
+
+<router-outlet name="messenger"></router-outlet>
+
+</div>

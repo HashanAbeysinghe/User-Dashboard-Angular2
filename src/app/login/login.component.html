@@ -1,0 +1,23 @@
+<form [formGroup]="loginForm" novalidate (ngSubmit)="loginForm.valid && login(loginForm.value)">
+
+    <div>
+        <label>Name</label>
+        <input type="text" formControlName="name">
+        <small [hidden]="loginForm.controls.name.valid ">
+            Name is required
+        </small>
+    </div>
+    <div>
+        <label>Passowrd</label>
+        <input type="text" formControlName="password">
+        <small [hidden]="loginForm.controls.password.valid ">
+            Password is required
+        </small>
+    </div>
+    <div>
+      {{error}}
+    </div>
+
+    <button type="submit">Submit</button>
+
+</form>
